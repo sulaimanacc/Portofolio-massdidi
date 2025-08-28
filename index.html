@@ -1,11 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PORTOFOLIO</title>
+    <title>Portofolio - M. Sulaiman Kurdi</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f8f9fa;
+        color: #333;
+        transition: background 0.3s, color 0.3s;
+      }
+      body.dark {
+        background: #1e1e1e;
+        color: #f8f9fa;
+      }
+      header {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 60px 20px;
+        position: relative;
+      }
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1s ease;
+      }
+      header p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1s ease 0.3s;
+      }
+      header a {
+        text-decoration: none;
+        background: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1s ease 0.6s;
+      }
+      section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2rem;
+        color: #007bff;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+      }
+      body.dark .card {
+        background: #2c2c2c;
+        color: #f8f9fa;
+      }
+      footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+      }
+      .btn-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #007bff;
+        color: #fff;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .btn-cv {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #28a745;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
-    <h1>M. SULAIMAN KURDI</h1>
+    <header>
+      <button class="btn-toggle">🌙 Mode Gelap</button>
+      <h1>M. Sulaiman Kurdi</h1>
+      <p>Personal Trainer | Freelance Educator</p>
+      <a href="#contact">Hubungi Saya</a>
+      <br />
+      <a class="btn-cv" href="CV-SulaimanKurdi.pdf" download>📄 Download CV</a>
+    </header>
+
+    <section id="about">
+      <h2>Tentang Saya</h2>
+      <p>
+        Saya adalah seorang personal trainer dan freelancer yang berfokus pada kesehatan, kebugaran, serta pendidikan olahraga. Memiliki pengalaman melatih individu dan kelompok dengan berbagai tujuan kebugaran, saya siap membantu Anda
+        mencapai target yang diinginkan.
+      </p>
+    </section>
+
+    <section id="portfolio">
+      <h2>Portofolio</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Program Latihan Klien</h3>
+          <p>Membuat program latihan sirkuit untuk klien usia 26 tahun agar sehat dan bugar kembali.</p>
+        </div>
+        <div class="card">
+          <h3>Makalah Pendidikan Olahraga</h3>
+          <p>Menyusun makalah tentang sejarah olahraga di Indonesia untuk kebutuhan akademik.</p>
+        </div>
+        <div class="card">
+          <h3>Pelatihan Agility</h3>
+          <p>Membuat sesi latihan dengan alat bantu cone, barbel, dan speed ladder.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Layanan</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Personal Training</h3>
+          <p>Program latihan privat sesuai kebutuhan dan kondisi tubuh klien.</p>
+        </div>
+        <div class="card">
+          <h3>Pembuatan Program Latihan</h3>
+          <p>Rencana latihan mingguan dengan metode variatif agar tidak membosankan.</p>
+        </div>
+        <div class="card">
+          <h3>Konsultasi Kebugaran</h3>
+          <p>Diskusi terkait pola makan, gaya hidup, dan strategi kebugaran.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Kontak</h2>
+      <p>📧 Email: <a href="mailto:emailanda@gmail.com">emailanda@gmail.com</a></p>
+      <p>📱 WhatsApp: <a href="https://wa.me/628123456789" target="_blank">+62 812-3456-789</a></p>
+      <p>🔗 LinkedIn / Instagram: <a href="#">@username</a></p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 M. Sulaiman Kurdi | All Rights Reserved</p>
+    </footer>
+
+    <script>
+      // Animasi saat load header
+      window.addEventListener("load", () => {
+        document.querySelector("header h1").style.opacity = 1;
+        document.querySelector("header h1").style.transform = "translateY(0)";
+        document.querySelector("header p").style.opacity = 1;
+        document.querySelector("header p").style.transform = "translateY(0)";
+        document.querySelector("header a").style.opacity = 1;
+        document.querySelector("header a").style.transform = "translateY(0)";
+      });
+
+      // Animasi scroll
+      const cards = document.querySelectorAll(".card");
+      window.addEventListener("scroll", () => {
+        const trigger = window.innerHeight * 0.85;
+        cards.forEach((card) => {
+          const rect = card.getBoundingClientRect().top;
+          if (rect < trigger) {
+            card.style.opacity = 1;
+            card.style.transform = "translateY(0)";
+          }
+        });
+      });
+
+      // Toggle dark mode
+      const toggleBtn = document.querySelector(".btn-toggle");
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️ Mode Terang" : "🌙 Mode Gelap";
+      });
+    </script>
   </body>
 </html>
