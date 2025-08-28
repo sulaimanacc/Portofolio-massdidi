@@ -6,62 +6,76 @@
     <title>Portofolio - M. Sulaiman Kurdi</title>
     <style>
       body {
-        font-family: Arial, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
         background: #f8f9fa;
         color: #333;
-        transition: background 0.3s, color 0.3s;
-      }
-      body.dark {
-        background: #1e1e1e;
-        color: #f8f9fa;
+        line-height: 1.6;
       }
       header {
         background: #222;
         color: #fff;
-        text-align: center;
-        padding: 60px 20px;
-        position: relative;
+        padding: 10px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
       }
       header h1 {
+        font-size: 1.5rem;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 15px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: #007bff;
+      }
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 80px 20px;
+        background: url("hero-image.jpg") no-repeat center center/cover;
+        color: #fff;
+      }
+      .hero h2 {
         font-size: 2.5rem;
         margin-bottom: 10px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 1s ease;
       }
-      header p {
+      .hero p {
         font-size: 1.2rem;
         margin-bottom: 20px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 1s ease 0.3s;
       }
-      header a {
-        text-decoration: none;
+      .hero a {
         background: #007bff;
-        color: #fff;
-        padding: 10px 20px;
+        padding: 12px 24px;
         border-radius: 5px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 1s ease 0.6s;
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
       }
       section {
         padding: 60px 20px;
-        max-width: 1000px;
+        max-width: 1100px;
         margin: auto;
       }
       section h2 {
         text-align: center;
-        margin-bottom: 40px;
         font-size: 2rem;
+        margin-bottom: 40px;
         color: #007bff;
       }
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
       }
       .card {
@@ -70,97 +84,125 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         padding: 20px;
         text-align: center;
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease;
       }
-      body.dark .card {
-        background: #2c2c2c;
-        color: #f8f9fa;
+      .card img,
+      .card video {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
       }
       footer {
         background: #222;
         color: #fff;
         text-align: center;
         padding: 20px;
-        margin-top: 40px;
       }
-      .btn-toggle {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        background: #007bff;
-        color: #fff;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .btn-cv {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 20px;
-        background: #28a745;
-        color: #fff;
-        border-radius: 5px;
+      footer a {
+        color: #007bff;
         text-decoration: none;
       }
     </style>
   </head>
   <body>
+    <!-- Navbar -->
     <header>
-      <button class="btn-toggle">🌙 Mode Gelap</button>
-      <h1>M. Sulaiman Kurdi</h1>
-      <p>Personal Trainer | Freelance Educator</p>
-      <a href="#contact">Hubungi Saya</a>
-      <br />
-      <a class="btn-cv" href="CV-SulaimanKurdi.pdf" download>📄 Download CV</a>
+      <h1>MSK Portofolio</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#portfolio">Portofolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <section id="about">
-      <h2>Tentang Saya</h2>
-      <p>
-        Saya adalah seorang personal trainer dan freelancer yang berfokus pada kesehatan, kebugaran, serta pendidikan olahraga. Memiliki pengalaman melatih individu dan kelompok dengan berbagai tujuan kebugaran, saya siap membantu Anda
-        mencapai target yang diinginkan.
-      </p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <h2>M. Sulaiman Kurdi</h2>
+      <p>Personal Trainer & Web Designer</p>
+      <a href="#portfolio">Lihat Portofolio</a>
+      <div style="margin-top: 20px">
+        <img src="icon-fitness.png" alt="icon" width="40" style="margin: 0 10px" />
+        <img src="icon-web.png" alt="icon" width="40" style="margin: 0 10px" />
+      </div>
     </section>
 
+    <!-- Portofolio -->
     <section id="portfolio">
       <h2>Portofolio</h2>
       <div class="grid">
         <div class="card">
-          <h3>Program Latihan Klien</h3>
-          <p>Membuat program latihan sirkuit untuk klien usia 26 tahun agar sehat dan bugar kembali.</p>
+          <img src="project1.jpg" alt="project 1" />
+          <h3>Website Toko Online</h3>
+          <p>Membangun website elegan untuk meningkatkan penjualan produk UMKM.</p>
         </div>
         <div class="card">
-          <h3>Makalah Pendidikan Olahraga</h3>
-          <p>Menyusun makalah tentang sejarah olahraga di Indonesia untuk kebutuhan akademik.</p>
+          <img src="project2.jpg" alt="project 2" />
+          <h3>Portofolio Pribadi</h3>
+          <p>Mendesain website personal branding untuk freelancer dan profesional.</p>
         </div>
         <div class="card">
-          <h3>Pelatihan Agility</h3>
-          <p>Membuat sesi latihan dengan alat bantu cone, barbel, dan speed ladder.</p>
+          <img src="project3.jpg" alt="project 3" />
+          <h3>Profil Desa</h3>
+          <p>Website profil desa untuk transparansi dan informasi publik.</p>
         </div>
       </div>
     </section>
 
-    <section id="services">
-      <h2>Layanan</h2>
+    <!-- About Me -->
+    <section id="about">
+      <h2>Tentang Saya</h2>
       <div class="grid">
         <div class="card">
-          <h3>Personal Training</h3>
-          <p>Program latihan privat sesuai kebutuhan dan kondisi tubuh klien.</p>
+          <h3>Pendidikan</h3>
+          <p>Lulusan Pendidikan Olahraga dengan pengalaman di dunia kebugaran dan desain web.</p>
         </div>
         <div class="card">
-          <h3>Pembuatan Program Latihan</h3>
-          <p>Rencana latihan mingguan dengan metode variatif agar tidak membosankan.</p>
+          <h3>Kelebihan</h3>
+          <p>Disiplin, komunikatif, fokus pada hasil, serta menguasai teknologi terkini.</p>
         </div>
         <div class="card">
-          <h3>Konsultasi Kebugaran</h3>
-          <p>Diskusi terkait pola makan, gaya hidup, dan strategi kebugaran.</p>
+          <h3>Pengalaman</h3>
+          <p>Menangani klien personal trainer, desain portofolio pribadi, profil sekolah, hingga toko online.</p>
         </div>
       </div>
     </section>
 
+    <!-- Skill -->
+    <section id="skills">
+      <h2>Keahlian & Skill</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Sertifikat</h3>
+          <p>Memiliki sertifikat Personal Trainer dan Web Development.</p>
+        </div>
+        <div class="card">
+          <h3>LinkedIn</h3>
+          <p>
+            Terkoneksi dengan profesional di bidang olahraga dan teknologi. <br />
+            <a href="#">Lihat Profil LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="blog">
+      <h2>Blog</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="blog1.jpg" alt="blog 1" />
+          <h3>Tips Kebugaran</h3>
+          <p>Artikel seputar pola hidup sehat dan latihan efektif.</p>
+        </div>
+        <div class="card">
+          <img src="blog2.jpg" alt="blog 2" />
+          <h3>Desain Website</h3>
+          <p>Artikel tentang tren desain website modern untuk bisnis dan personal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
       <h2>Kontak</h2>
       <p>📧 Email: <a href="mailto:emailanda@gmail.com">emailanda@gmail.com</a></p>
@@ -168,40 +210,9 @@
       <p>🔗 LinkedIn / Instagram: <a href="#">@username</a></p>
     </section>
 
+    <!-- Footer -->
     <footer>
       <p>&copy; 2025 M. Sulaiman Kurdi | All Rights Reserved</p>
     </footer>
-
-    <script>
-      // Animasi saat load header
-      window.addEventListener("load", () => {
-        document.querySelector("header h1").style.opacity = 1;
-        document.querySelector("header h1").style.transform = "translateY(0)";
-        document.querySelector("header p").style.opacity = 1;
-        document.querySelector("header p").style.transform = "translateY(0)";
-        document.querySelector("header a").style.opacity = 1;
-        document.querySelector("header a").style.transform = "translateY(0)";
-      });
-
-      // Animasi scroll
-      const cards = document.querySelectorAll(".card");
-      window.addEventListener("scroll", () => {
-        const trigger = window.innerHeight * 0.85;
-        cards.forEach((card) => {
-          const rect = card.getBoundingClientRect().top;
-          if (rect < trigger) {
-            card.style.opacity = 1;
-            card.style.transform = "translateY(0)";
-          }
-        });
-      });
-
-      // Toggle dark mode
-      const toggleBtn = document.querySelector(".btn-toggle");
-      toggleBtn.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-        toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️ Mode Terang" : "🌙 Mode Gelap";
-      });
-    </script>
   </body>
 </html>
